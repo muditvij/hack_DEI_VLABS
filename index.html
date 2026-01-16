@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab Hackathon 2026 | DEI & MoE</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#050505',
+                            dark: '#0a0a12',
+                            blue: '#00f3ff',     /* Neon Cyan */
+                            purple: '#bc13fe',   /* Neon Purple */
+                            gold: '#ffd700',     /* Gold */
+                        }
+                    },
+                    fontFamily: {
+                        'hero': ['Orbitron', 'sans-serif'],
+                        'body': ['Rajdhani', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'cyber-mesh': "radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%)",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '1', boxShadow: '0 0 20px rgba(0, 243, 255, 0.5)' },
+                            '50%': { opacity: '.5', boxShadow: '0 0 10px rgba(0, 243, 255, 0.2)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-body selection:bg-cyber-blue selection:text-black">
+
+    <header id="navbar"
+        class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-white/5 bg-black/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24">
+                <div class="flex items-center gap-6">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-cyber-blue shadow-[0_0_15px_#00f3ff] overflow-hidden">
+                            <img src="images.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="h-8 w-px bg-gray-600"></div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-cyber-purple shadow-[0_0_15px_#bc13fe] overflow-hidden">
+                            <img src="images2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about"
+                        class="text-sm font-hero tracking-widest hover:text-cyber-blue transition-colors">ABOUT</a>
+                    <a href="#rules"
+                        class="text-sm font-hero tracking-widest hover:text-cyber-blue transition-colors">RULES</a>
+                    <a href="#roadmap"
+                        class="text-sm font-hero tracking-widest hover:text-cyber-blue transition-colors">TIMELINE</a>
+                    <a href="#problems"
+                        class="text-sm font-hero tracking-widest hover:text-cyber-blue transition-colors">CHALLENGES</a>
+                    <a href="#prizes"
+                        class="text-sm font-hero tracking-widest hover:text-cyber-gold transition-colors">PRIZES</a>
+                </nav>
+                <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
+                    class="hidden md:inline-block px-8 py-3 bg-cyber-blue text-black font-hero font-bold rounded hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300">
+                    REGISTER NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home"
+        class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
+        <div class="perspective-grid"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-cyber-mesh opacity-40 z-[-1]"></div>
+
+        <div class="text-center z-10 px-4 animate-float">
+            <div
+                class="inline-block mb-4 px-6 py-2 border border-cyber-blue/30 rounded-full bg-cyber-blue/10 backdrop-blur-md">
+                <span class="text-cyber-blue font-hero tracking-[0.2em] text-sm">NATIONAL LEVEL EVENT</span>
+            </div>
+
+            <h1 class="text-5xl md:text-8xl font-hero font-black mb-6 leading-tight">
+                VIRTUAL LAB <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">HACKATHON</span>
+                <span class="text-cyber-blue text-6xl md:text-8xl align-top">2026</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto mb-10">
+                Innovate. Simulate. Elevate. <br>
+                <span class="text-cyber-blue">Offline Grand Finale at DEI, Agra.</span>
+            </p>
+
+            <div class="glass p-8 rounded-2xl inline-block mb-12 border-t border-cyber-blue/50">
+                <p class="text-gray-400 text-xs font-hero tracking-widest mb-6 uppercase">Submission Deadline In</p>
+                <div class="flex gap-6 md:gap-10 justify-center">
+                    <div class="text-center">
+                        <span id="days" class="block text-4xl md:text-6xl font-hero font-bold text-white">00</span>
+                        <span class="text-xs text-gray-500 uppercase">Days</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="hours" class="block text-4xl md:text-6xl font-hero font-bold text-white">00</span>
+                        <span class="text-xs text-gray-500 uppercase">Hours</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="minutes" class="block text-4xl md:text-6xl font-hero font-bold text-white">00</span>
+                        <span class="text-xs text-gray-500 uppercase">Mins</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="seconds"
+                            class="block text-4xl md:text-6xl font-hero font-bold text-cyber-blue animate-pulse">00</span>
+                        <span class="text-xs text-gray-500 uppercase">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a href="#about"
+                    class="inline-block border border-gray-600 px-8 py-3 rounded-full hover:border-cyber-blue hover:text-cyber-blue transition-colors duration-300 font-hero">
+                    EXPLORE EVENT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-cyber-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="glass p-8 rounded-xl border-l-4 border-cyber-blue" data-aos="fade-right">
+                    <h2 class="text-3xl font-hero font-bold text-white mb-4">About <span
+                            class="text-cyber-blue">DEI</span></h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        <strong class="text-white">Dayalbagh Educational Institute (Deemed to be University)</strong> is
+                        a pioneer in value-based education and innovation. Renowned for its unique work-study ethos and
+                        excellence in engineering and science, DEI stands as a beacon of holistic education in India.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Hosting this hackathon, DEI continues its legacy of integrating technology with societal needs,
+                        fostering a culture of "Excellence with Relevance."
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-xl border-r-4 border-cyber-purple" data-aos="fade-left">
+                    <h2 class="text-3xl font-hero font-bold text-white mb-4">About <span
+                            class="text-cyber-purple">Virtual Labs</span></h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        An initiative of the <strong class="text-white">Ministry of Education (MoE)</strong>, Govt. of
+                        India, under the National Mission on Education through ICT.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Virtual Labs provide remote-access to Labs in various disciplines of Science and Engineering.
+                        This hackathon aims to expand this repository with student-driven, next-gen simulations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="py-24 bg-black relative">
+        <div class="absolute inset-0 bg-cyber-blue/5 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl font-hero font-bold text-white mb-8 border-b border-gray-800 pb-4">
+                        Rules & <span class="text-cyber-blue">Regulations</span>
+                    </h2>
+                    <ul class="space-y-6">
+                        <li
+                            class="flex items-start bg-gray-900/50 p-4 rounded border border-gray-800 hover:border-cyber-blue transition-colors">
+                            <i class="fas fa-users text-cyber-blue mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="text-white font-bold">Team Size</h4>
+                                <p class="text-gray-400">1 - 4 Members per team.</p>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-start bg-gray-900/50 p-4 rounded border border-gray-800 hover:border-cyber-blue transition-colors">
+                            <i class="fas fa-graduation-cap text-cyber-blue mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="text-white font-bold">Eligibility</h4>
+                                <p class="text-gray-400">Engineering & Science Students (UG / PG / Diploma).</p>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-start bg-gray-900/50 p-4 rounded border border-gray-800 hover:border-cyber-blue transition-colors">
+                            <i class="fas fa-laptop-code text-cyber-blue mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="text-white font-bold">Submission Requirement</h4>
+                                <p class="text-gray-400">Submission must be a working MVP (Minimum Viable Product) or
+                                    Prototype.</p>
+                                <p class="text-gray-400 mt-2">
+                                    <a href="https://docs.google.com/presentation/d/1xsGpDGqBC6Et0Otsl-jSV17u2p3wk4jfxN6bo7CoYSA/edit?usp=sharing"
+                                        class="text-cyber-blue hover:underline">Download PPT Template</a> <br>
+                                    <span class="text-sm text-red-400">Submission should be in that format only.</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li
+                            class="flex items-start bg-gray-900/50 p-4 rounded border border-gray-800 hover:border-cyber-blue transition-colors">
+                            <i class="fas fa-map-marker-alt text-cyber-blue mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="text-white font-bold">Final Round</h4>
+                                <p class="text-gray-400">Offline Grand Finale at DEI, Agra.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="text-4xl font-hero font-bold text-white mb-8 border-b border-gray-800 pb-4">
+                        Judging <span class="text-cyber-purple">Criteria</span>
+                    </h2>
+
+                    <div class="space-y-8 bg-gray-900 p-8 rounded-xl border border-gray-800">
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-white font-bold text-lg">Innovation & Creativity</span>
+                                <span class="text-cyber-purple font-hero text-xl">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-3">
+                                <div class="bg-cyber-purple h-3 rounded-full progress-bar" style="width: 30%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-white font-bold text-lg">Technical Complexity</span>
+                                <span class="text-cyber-blue font-hero text-xl">25%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-3">
+                                <div class="bg-cyber-blue h-3 rounded-full progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-white font-bold text-lg">UX & Interactivity</span>
+                                <span class="text-cyber-blue font-hero text-xl">25%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-3">
+                                <div class="bg-cyber-blue h-3 rounded-full progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <span class="text-white font-bold text-lg">Relevance to Curriculum</span>
+                                <span class="text-gray-400 font-hero text-xl">20%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-3">
+                                <div class="bg-gray-400 h-3 rounded-full progress-bar" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="py-24 bg-cyber-dark relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-hero font-bold text-center mb-20 text-white" data-aos="fade-up">
+                EVENT <span class="text-gradient-cyan">ROADMAP</span>
+            </h2>
+
+            <div class="relative">
+                <div
+                    class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gray-800 md:transform md:-translate-x-1/2">
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center mb-16" data-aos="fade-right">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 text-left">
+                        <h3 class="text-2xl font-hero text-cyber-blue">Registration Starts</h3>
+                        <p class="text-gray-400 mt-2">Create your team (1-4 members). Start brainstorming ideas.</p>
+                    </div>
+                    <div
+                        class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-cyber-blue border-4 border-black transform md:-translate-x-1/2 shadow-[0_0_15px_#00f3ff]">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12 mt-2 md:mt-0">
+                        <span class="font-hero font-bold text-3xl text-gray-700">18 JAN</span>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center mb-16" data-aos="fade-left">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 text-left order-1 md:order-1">
+                        <span class="font-hero font-bold text-3xl text-gray-700">30 JAN</span>
+                    </div>
+                    <div
+                        class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-white border-4 border-black transform md:-translate-x-1/2">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12 mt-2 md:mt-0 order-2 md:order-2">
+                        <h3 class="text-2xl font-hero text-white">Submission Deadline</h3>
+                        <p class="text-gray-400 mt-2">Last date to submit your Presentation & MVP prototype.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center mb-16" data-aos="fade-right">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 text-left">
+                        <h3 class="text-2xl font-hero text-cyber-purple">Shortlist Announced</h3>
+                        <p class="text-gray-400 mt-2">6 Teams selected for the Grand Finale.</p>
+                    </div>
+                    <div
+                        class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-cyber-purple border-4 border-black transform md:-translate-x-1/2 shadow-[0_0_15px_#bc13fe]">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12 mt-2 md:mt-0">
+                        <span class="font-hero font-bold text-3xl text-gray-700">02 FEB</span>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center" data-aos="zoom-in">
+                    <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 text-left order-1 md:order-1">
+                        <span class="font-hero font-bold text-4xl text-cyber-gold animate-pulse">07 FEB</span>
+                    </div>
+                    <div
+                        class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-cyber-gold border-4 border-black transform md:-translate-x-1/2 shadow-[0_0_20px_#ffd700]">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 pl-12 mt-2 md:mt-0 order-2 md:order-2">
+                        <h3 class="text-3xl font-hero text-cyber-gold">GRAND FINALE</h3>
+                        <p class="text-white mt-2">Offline Hackathon @ DEI, Agra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problems" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-hero font-bold mb-16 border-l-4 border-cyber-blue pl-6 text-white"
+                data-aos="fade-right">
+                PROBLEM <br> STATEMENTS
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Mechanical Engineering -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up">
+                    <img src="https://media.istockphoto.com/id/695596712/photo/metal-wheel-concept.jpg?s=612x612&w=0&k=20&c=gp_Rqn-I-EfhcMZosaYx-AVKT4McurTOxvWhbKnkmp8="
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Mechanical">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span class="text-cyber-blue text-xs font-hero tracking-widest uppercase mb-1">Mechanical
+                            Engineering</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">Classroom Thermal Simulation & HVAC
+                            Control</h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Develop a time-based thermal simulation of a
+                            classroom and design a control strategy that maintains thermal comfort while minimizing HVAC
+                            energy consumption.</p>
+                    </div>
+                </div>
+
+                <!-- Computer Science -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="CS">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span class="text-cyber-purple text-xs font-hero tracking-widest uppercase mb-1">Computer
+                            Science</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">The Algorithmic "Glass Box"
+                            Simulator</h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Design an interactive platform that visualizes and
+                            narrates every internal step of pathfinding algorithms (BFS, DFS, A*) to enable deep
+                            conceptual understanding.</p>
+                    </div>
+                </div>
+
+                <!-- Electrical Engineering -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1000&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Electrical">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span class="text-cyber-gold text-xs font-hero tracking-widest uppercase mb-1">Electrical
+                            Engineering</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">Microgrid Simulator + Daily Energy
+                            Scheduler</h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Design a time-based simulation of a microgrid and
+                            develop a detailed daily energy scheduling strategy that minimizes energy usage and
+                            operational cost.</p>
+                    </div>
+                </div>
+
+                <!-- Civil Engineering -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Civil">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span class="text-green-400 text-xs font-hero tracking-widest uppercase mb-1">Civil
+                            Engineering</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">Interactive Structural Response
+                            Simulator</h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Build a simulator for a multi-storey frame under
+                            seismic input. Visualize mode shapes and time-history displacement under earthquake
+                            acceleration.</p>
+                    </div>
+                </div>
+
+                <!-- Agriculture -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="https://media.istockphoto.com/id/503646746/photo/farmer-spreading-fertilizer-in-the-field-wheat.jpg?s=612x612&w=0&k=20&c=Lgxsjbz0jaYyQrvfzhyAsW2zELtshRP4AtLzkpmcLiE="
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Agriculture">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span
+                            class="text-yellow-400 text-xs font-hero tracking-widest uppercase mb-1">Agriculture</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">Crop Water Stress Simulation</h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Create a field-scale simulator that models soil
+                            moisture dynamics and recommends irrigation timings to save water while maintaining crop
+                            stress limits.</p>
+                    </div>
+                </div>
+
+                <!-- Footwear -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1000&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Footwear">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end">
+                        <span class="text-pink-400 text-xs font-hero tracking-widest uppercase mb-1">Footwear
+                            Tech</span>
+                        <h3 class="text-xl font-bold text-white mb-2 leading-tight">Simulated Comfort & Wear Prediction
+                        </h3>
+                        <p class="text-gray-300 text-sm line-clamp-4">Create a simulation pipeline that takes a
+                            parametric sole geometry and predicts pressure distribution & comfort index under static
+                            standing and walking gait.</p>
+                    </div>
+                </div>
+
+                <!-- Open Innovation -->
+                <div class="group relative rounded-xl overflow-hidden h-96 card-zoom cursor-pointer md:col-span-2 lg:col-span-3 lg:w-2/3 lg:mx-auto"
+                    data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
+                        alt="Innovation">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 h-full flex flex-col justify-end text-center">
+                        <span class="text-cyan-400 text-xs font-hero tracking-widest uppercase mb-1">Theme 7</span>
+                        <h3 class="text-3xl font-bold text-white mb-4 leading-tight">OPEN INNOVATION</h3>
+                        <p class="text-gray-200 text-base max-w-2xl mx-auto">Have a unique idea? Solve a real-world
+                            problem of your choice using Virtual Labs technologies. Innovate without boundaries and
+                            showcase your creativity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Documentation Button -->
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <a href="https://docs.google.com/document/d/17zSQZpbegApkGVLHx8fpgMSdx7GxotzrE-xPX0RmJdE/edit?usp=sharing"
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-cyber-blue text-black font-hero font-bold rounded-lg hover:bg-white hover:shadow-[0_0_30px_#00f3ff] transition-all duration-300 group">
+                    <span>DOWNLOAD DETAILED PROBLEM STATEMENTS</span>
+                    <i class="fas fa-file-download text-xl group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="prizes" class="py-24 bg-black relative overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyber-gold opacity-5 blur-[150px]">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <h2 class="text-4xl md:text-6xl font-hero font-bold text-center mb-16 text-white" data-aos="fade-down">
+                GRAND <span class="text-gradient-gold">REWARDS</span>
+            </h2>
+
+            <div class="flex flex-col items-center justify-center">
+
+                <div class="w-full md:w-2/3 glass border-2 border-yellow-500/50 rounded-2xl p-10 text-center relative overflow-hidden group hover:border-yellow-400 transition-all duration-500 shadow-[0_0_50px_rgba(255,215,0,0.1)] hover:shadow-[0_0_100px_rgba(255,215,0,0.3)]"
+                    data-aos="zoom-in">
+                    <!-- Background Glow -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-yellow-500/10 to-transparent opacity-50 group-hover:opacity-75 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Trophy Icon -->
+                    <div class="relative z-10 mb-8">
+                        <div
+                            class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-lg shadow-yellow-500/50 animate-float">
+                            <i class="fas fa-trophy text-4xl text-black drop-shadow-md"></i>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h3
+                        class="relative z-10 text-5xl md:text-7xl font-hero font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-yellow-400 to-yellow-100 mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                        TOP 3 TEAMS
+                    </h3>
+
+                    <!-- Subtitle -->
+                    <p class="relative z-10 text-white text-xl md:text-2xl font-bold mb-10 tracking-wide">
+                        Prestigious Internship Opportunity
+                    </p>
+
+                    <!-- Prize Amount Box -->
+                    <div
+                        class="relative z-10 inline-block bg-black/60 backdrop-blur-md border border-yellow-500/30 rounded-2xl px-8 md:px-14 py-8 mb-6 transform group-hover:scale-105 transition-transform duration-300 shadow-2xl">
+                        <div class="text-cyber-blue font-hero text-sm md:text-base tracking-[0.2em] uppercase mb-2">
+                            Stipend Per Month</div>
+                        <div
+                            class="text-6xl md:text-8xl font-hero font-bold text-white mb-3 drop-shadow-[0_0_20px_rgba(255,215,0,0.4)]">
+                            ₹15,000
+                        </div>
+                        <div
+                            class="flex items-center justify-center gap-2 text-yellow-400 font-bold text-lg md:text-2xl tracking-wide flex-wrap">
+                            <span>at</span>
+                            <span
+                                class="text-white bg-yellow-600/20 px-3 py-1 rounded border border-yellow-600/50">Vlabs
+                                (MoE, India)</span>
+                        </div>
+                    </div>
+
+                    <p class="relative z-10 text-gray-500 text-sm font-hero tracking-widest uppercase mt-4">
+                        Valid for Each Student in the Top 3 Teams
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-certificate text-cyber-purple text-3xl mb-3"></i>
+                    <h4 class="text-white font-bold">Certificates</h4>
+                    <p class="text-gray-500 text-sm">For all Shortlisted Teams</p>
+                </div>
+                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-users text-cyber-blue text-3xl mb-3"></i>
+                    <h4 class="text-white font-bold">Elite Finalists</h4>
+                    <p class="text-gray-500 text-sm">6 Teams Shortlisted for Finale</p>
+                </div>
+                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-handshake text-cyber-gold text-3xl mb-3"></i>
+                    <h4 class="text-white font-bold">Networking</h4>
+                    <p class="text-gray-500 text-sm">Connect with MoE Officials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-12 text-center" data-aos="fade-up">
+                <h3 class="text-white font-hero font-bold mb-2">FOR QUERIES AND DOUBTS</h3>
+                <p class="text-gray-400">Reach us at <a href="mailto:vlabshackathondei@gmail.com"
+                        class="text-cyber-blue hover:underline">vlabshackathondei@gmail.com</a></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="text-2xl font-hero text-white mb-4">DEI <span class="text-cyber-blue">x</span> VIRTUAL
+                        LABS</h2>
+                    <p class="text-gray-500 text-sm max-w-sm mb-6">
+                        Dayalbagh Educational Institute (Deemed to be University)<br>
+                        Dayalbagh, Agra - 282005
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-hero font-bold mb-4 border-b border-gray-800 pb-2">FACULTY COORDINATOR
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="hover:text-white transition-colors">
+                            <span class="block text-cyber-purple font-bold">Prof. Rahul Swaroop Sharma</span>
+                            Dept. of Mechanical Engineering<br>DEI, Agra
+                        </li>
+                        <li class="mt-4">
+                            <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
+                                class="text-cyber-gold hover:underline">Register for Hackathon &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-hero font-bold mb-4 border-b border-gray-800 pb-2">STUDENT COORDINATORS
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="hover:text-white transition-colors">
+                            <span class="block text-cyber-blue font-bold">Netik Goswami</span>
+                            <a href="mailto:netikgoswami2400970@dei.ac.in"
+                                class="hover:text-cyber-blue transition-colors">netikgoswami2400970@dei.ac.in</a> <br>
+                            +91 8791723878
+                        </li>
+                        <li class="hover:text-white transition-colors">
+                            <span class="block text-cyber-blue font-bold">Mudit Vij</span>
+                            <a href="mailto:muditvij2400967@dei.ac.in"
+                                class="hover:text-cyber-blue transition-colors">muditvij2400967@dei.ac.in</a> <br> +91
+                            8630044552
+                        </li>
+                        <li class="hover:text-white transition-colors">
+                            <span class="block text-cyber-blue font-bold">Shreyansh Jain</span>
+                            <a href="mailto:sjshreyansh2004@gmail.com"
+                                class="hover:text-cyber-blue transition-colors">sjshreyansh2004@gmail.com</a> <br> +91
+                            9997519994
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-xs font-hero">&copy; 2026 Dayalbagh Educational Institute. Designed for
+                    Innovation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50 });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
