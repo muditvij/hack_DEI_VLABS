@@ -16,6 +16,18 @@ body {
     background-color: #050505;
     color: #ffffff;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Navbar Hide/Show Animation */
+#navbar {
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Animated Grid Background */

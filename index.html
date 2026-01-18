@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Lab Hackathon 2026 | DEI & MoE</title>
+    <title>VLabs Hackathon 2026 | DEI</title>
+    <link rel="icon" type="image/jpeg" href="images.jpeg">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -63,21 +64,12 @@
         class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-white/5 bg-black/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24">
-                <div class="flex items-center gap-6">
-                    <div class="flex flex-col items-center">
-                        <div
-                            class="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-cyber-blue shadow-[0_0_15px_#00f3ff] overflow-hidden">
-                            <img src="images.jpeg" alt="">
-                        </div>
-                    </div>
-                    <div class="h-8 w-px bg-gray-600"></div>
-                    <div class="flex flex-col items-center">
-                        <div
-                            class="w-14 h-14 rounded-full bg-white flex items-center justify-center border-2 border-cyber-purple shadow-[0_0_15px_#bc13fe] overflow-hidden">
-                            <img src="images2.png" alt="">
-                        </div>
-                    </div>
-                </div>
+                <!-- Mobile Menu Button (Left on Mobile) -->
+                <button id="mobile-menu-btn" class="text-white focus:outline-none md:hidden">
+                    <i class="fas fa-bars text-3xl"></i>
+                </button>
+
+                <!-- Desktop Navigation (Center on Desktop) -->
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about"
                         class="text-sm font-hero tracking-widest hover:text-cyber-blue transition-colors">ABOUT</a>
@@ -90,9 +82,11 @@
                     <a href="#prizes"
                         class="text-sm font-hero tracking-widest hover:text-cyber-gold transition-colors">PRIZES</a>
                 </nav>
+
+                <!-- Register Button (Right on both Mobile and Desktop) -->
                 <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
-                    class="hidden md:inline-block px-8 py-3 bg-cyber-blue text-black font-hero font-bold rounded hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300">
-                    REGISTER NOW
+                    class="px-4 py-2 md:px-8 md:py-3 bg-cyber-blue text-black font-hero font-bold text-xs md:text-base rounded hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300">
+                    REGISTER<span class="hidden md:inline"> NOW</span>
                 </a>
             </div>
         </div>
@@ -104,21 +98,33 @@
         <div class="absolute top-0 left-0 w-full h-full bg-cyber-mesh opacity-40 z-[-1]"></div>
 
         <div class="text-center z-10 px-4 animate-float">
+            <!-- Logos Moved to Hero -->
+            <div class="flex items-center justify-center gap-4 md:gap-12 mb-8 md:mb-14">
+                <div
+                    class="w-36 h-28 md:w-80 md:h-52 rounded-2xl bg-white flex items-center justify-center border-2 border-cyber-blue shadow-[0_0_25px_#00f3ff] overflow-hidden transition-transform hover:scale-105 duration-300">
+                    <img src="images.jpeg" alt="DEI Logo" class="w-full h-full object-contain p-2 md:p-6">
+                </div>
+                <div class="h-16 md:h-32 w-px bg-cyber-blue/50"></div>
+                <div
+                    class="w-36 h-28 md:w-80 md:h-52 rounded-2xl bg-white flex items-center justify-center border-2 border-cyber-purple shadow-[0_0_25px_#bc13fe] overflow-hidden transition-transform hover:scale-105 duration-300">
+                    <img src="images2.png" alt="Virtual Labs Logo" class="w-full h-full object-contain p-2 md:p-6">
+                </div>
+            </div>
             <div
                 class="inline-block mb-4 px-6 py-2 border border-cyber-blue/30 rounded-full bg-cyber-blue/10 backdrop-blur-md">
-                <span class="text-cyber-blue font-hero tracking-[0.2em] text-sm">NATIONAL LEVEL EVENT trial</span>
+                <span class="text-cyber-blue font-hero tracking-[0.2em] text-sm">NATIONAL LEVEL EVENT</span>
             </div>
 
-            <h1 class="text-5xl md:text-8xl font-hero font-black mb-6 leading-tight">
+            <h1 class="text-3xl sm:text-5xl md:text-8xl font-hero font-black mb-6 leading-tight">
                 VIRTUAL LAB <br>
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">HACKATHON</span>
-                <span class="text-cyber-blue text-6xl md:text-8xl align-top">2026</span>
+                <span class="text-cyber-blue text-4xl sm:text-6xl md:text-8xl align-top">2026</span>
             </h1>
 
             <p class="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto mb-10">
                 Innovate. Simulate. Elevate. <br>
-                <span class="text-cyber-blue">Offline Grand Finale at DEI, Agra.</span>
+                <span class="text-cyber-blue">Offline Final Round at Dayalbagh Educational Institute, Agra.</span>
             </p>
 
             <div class="glass p-8 rounded-2xl inline-block mb-12 border-t border-cyber-blue/50">
@@ -149,6 +155,12 @@
                     class="inline-block border border-gray-600 px-8 py-3 rounded-full hover:border-cyber-blue hover:text-cyber-blue transition-colors duration-300 font-hero">
                     EXPLORE EVENT
                 </a>
+
+                <!-- Mobile Only Register CTA in Hero -->
+                <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
+                    class="md:hidden block mt-6 px-8 py-4 bg-cyber-blue text-black font-hero font-bold rounded hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300 mx-auto w-4/5 max-w-xs animate-pulse-glow">
+                    REGISTER NOW
+                </a>
             </div>
         </div>
     </section>
@@ -158,29 +170,39 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="glass p-8 rounded-xl border-l-4 border-cyber-blue" data-aos="fade-right">
                     <h2 class="text-3xl font-hero font-bold text-white mb-4">About <span
-                            class="text-cyber-blue">DEI</span></h2>
+                            class="text-cyber-blue">Dayalbagh Educational Institute</span></h2>
                     <p class="text-gray-300 mb-4 leading-relaxed">
                         <strong class="text-white">Dayalbagh Educational Institute (Deemed to be University)</strong> is
                         a pioneer in value-based education and innovation. Renowned for its unique work-study ethos and
-                        excellence in engineering and science, DEI stands as a beacon of holistic education in India.
+                        excellence in engineering and science, Dayalbagh Educational Institute stands as a beacon of
+                        holistic education in India.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Hosting this hackathon, DEI continues its legacy of integrating technology with societal needs,
+                        Hosting this hackathon, Dayalbagh Educational Institute continues its legacy of integrating
+                        technology with societal needs,
                         fostering a culture of "Excellence with Relevance."
                     </p>
+                    <a href="https://www.dei.ac.in/dei/" target="_blank"
+                        class="inline-block mt-4 px-6 py-2 border border-cyber-blue text-cyber-blue hover:bg-cyber-blue hover:text-white transition-all duration-300 rounded font-hero text-sm">
+                        KNOW MORE <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
                 </div>
 
                 <div class="glass p-8 rounded-xl border-r-4 border-cyber-purple" data-aos="fade-left">
                     <h2 class="text-3xl font-hero font-bold text-white mb-4">About <span
                             class="text-cyber-purple">Virtual Labs</span></h2>
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        An initiative of the <strong class="text-white">Ministry of Education (MoE)</strong>, Govt. of
-                        India, under the National Mission on Education through ICT.
+                        An initiative of the <strong class="text-white">Ministry of Education (MoE), Govt. of
+                        India, </strong>under the National Mission on Education through ICT.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
                         Virtual Labs provide remote-access to Labs in various disciplines of Science and Engineering.
                         This hackathon aims to expand this repository with student-driven, next-gen simulations.
                     </p>
+                    <a href="https://www.vlab.co.in/participating-institute-dayalbagh" target="_blank"
+                        class="inline-block mt-4 px-6 py-2 border border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 rounded font-hero text-sm">
+                        VISIT VIRTUAL LABS <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -220,9 +242,12 @@
                                 <p class="text-gray-400">Submission must be a working MVP (Minimum Viable Product) or
                                     Prototype.</p>
                                 <p class="text-gray-400 mt-2">
-                                    <a href="https://docs.google.com/presentation/d/1xsGpDGqBC6Et0Otsl-jSV17u2p3wk4jfxN6bo7CoYSA/edit?usp=sharing"
-                                        class="text-cyber-blue hover:underline">Download PPT Template</a> <br>
-                                    <span class="text-sm text-red-400">Submission should be in that format only.</span>
+                                    <a href="TEMPLATE_PPT_HACKATHON_VLABS.pptx"
+                                        download
+                                        class="inline-flex items-center gap-2 px-4 py-2 bg-cyber-blue text-black font-hero font-bold rounded hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300 text-sm">
+                                        <i class="fas fa-download"></i> Download PPT Template
+                                    </a> <br>
+                                    <span class="text-sm text-red-400 mt-2 block">Submission should be in that format only.</span>
                                 </p>
                             </div>
                         </li>
@@ -231,7 +256,8 @@
                             <i class="fas fa-map-marker-alt text-cyber-blue mt-1 mr-4 text-xl"></i>
                             <div>
                                 <h4 class="text-white font-bold">Final Round</h4>
-                                <p class="text-gray-400">Offline Grand Finale at DEI, Agra.</p>
+                                <p class="text-gray-400">Offline Final Round at Dayalbagh Educational Institute, Agra.
+                                </p>
                             </div>
                         </li>
                     </ul>
@@ -256,10 +282,10 @@
                         <div>
                             <div class="flex justify-between items-end mb-2">
                                 <span class="text-white font-bold text-lg">Technical Complexity</span>
-                                <span class="text-cyber-blue font-hero text-xl">25%</span>
+                                <span class="text-cyber-blue font-hero text-xl">30%</span>
                             </div>
                             <div class="w-full bg-gray-800 rounded-full h-3">
-                                <div class="bg-cyber-blue h-3 rounded-full progress-bar" style="width: 25%"></div>
+                                <div class="bg-cyber-blue h-3 rounded-full progress-bar" style="width: 30%"></div>
                             </div>
                         </div>
 
@@ -275,11 +301,11 @@
 
                         <div>
                             <div class="flex justify-between items-end mb-2">
-                                <span class="text-white font-bold text-lg">Relevance to Curriculum</span>
-                                <span class="text-gray-400 font-hero text-xl">20%</span>
+                                <span class="text-white font-bold text-lg">Alignment to Theme</span>
+                                <span class="text-gray-400 font-hero text-xl">15%</span>
                             </div>
                             <div class="w-full bg-gray-800 rounded-full h-3">
-                                <div class="bg-gray-400 h-3 rounded-full progress-bar" style="width: 20%"></div>
+                                <div class="bg-gray-400 h-3 rounded-full progress-bar" style="width: 15%"></div>
                             </div>
                         </div>
                     </div>
@@ -328,8 +354,8 @@
 
                 <div class="relative flex flex-col md:flex-row items-center mb-16" data-aos="fade-right">
                     <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 text-left">
-                        <h3 class="text-2xl font-hero text-cyber-purple">Shortlist Announced</h3>
-                        <p class="text-gray-400 mt-2">6 Teams selected for the Grand Finale.</p>
+                        <h3 class="text-2xl font-hero text-cyber-purple">Shortlist Teams Announcement</h3>
+                        <p class="text-gray-400 mt-2">6 Teams selected for the Final Round.</p>
                     </div>
                     <div
                         class="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-cyber-purple border-4 border-black transform md:-translate-x-1/2 shadow-[0_0_15px_#bc13fe]">
@@ -347,8 +373,8 @@
                         class="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-cyber-gold border-4 border-black transform md:-translate-x-1/2 shadow-[0_0_20px_#ffd700]">
                     </div>
                     <div class="md:w-1/2 md:pl-12 pl-12 mt-2 md:mt-0 order-2 md:order-2">
-                        <h3 class="text-3xl font-hero text-cyber-gold">GRAND FINALE</h3>
-                        <p class="text-white mt-2">Offline Hackathon @ DEI, Agra.</p>
+                        <h3 class="text-3xl font-hero text-cyber-gold">FINAL ROUND</h3>
+                        <p class="text-white mt-2">Offline Hackathon @ Dayalbagh Educational Institute, Agra.</p>
                     </div>
                 </div>
             </div>
@@ -370,8 +396,7 @@
                         alt="Mechanical">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <span class="text-cyber-blue text-xs font-hero tracking-widest uppercase mb-1">Mechanical
-                            Engineering</span>
+                        <span class="text-cyber-blue text-xs font-hero tracking-widest uppercase mb-1">Theme 1</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">Classroom Thermal Simulation & HVAC
                             Control</h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Develop a time-based thermal simulation of a
@@ -388,8 +413,7 @@
                         alt="CS">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <span class="text-cyber-purple text-xs font-hero tracking-widest uppercase mb-1">Computer
-                            Science</span>
+                        <span class="text-cyber-purple text-xs font-hero tracking-widest uppercase mb-1">Theme 2</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">The Algorithmic "Glass Box"
                             Simulator</h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Design an interactive platform that visualizes and
@@ -406,8 +430,7 @@
                         alt="Electrical">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <span class="text-cyber-gold text-xs font-hero tracking-widest uppercase mb-1">Electrical
-                            Engineering</span>
+                        <span class="text-cyber-gold text-xs font-hero tracking-widest uppercase mb-1">Theme 3</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">Microgrid Simulator + Daily Energy
                             Scheduler</h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Design a time-based simulation of a microgrid and
@@ -423,8 +446,7 @@
                         alt="Civil">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <span class="text-green-400 text-xs font-hero tracking-widest uppercase mb-1">Civil
-                            Engineering</span>
+                        <span class="text-green-400 text-xs font-hero tracking-widest uppercase mb-1">Theme 4</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">Interactive Structural Response
                             Simulator</h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Build a simulator for a multi-storey frame under
@@ -442,7 +464,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
                         <span
-                            class="text-yellow-400 text-xs font-hero tracking-widest uppercase mb-1">Agriculture</span>
+                            class="text-yellow-400 text-xs font-hero tracking-widest uppercase mb-1">Theme 5</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">Crop Water Stress Simulation</h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Create a field-scale simulator that models soil
                             moisture dynamics and recommends irrigation timings to save water while maintaining crop
@@ -458,8 +480,7 @@
                         alt="Footwear">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
                     <div class="relative z-10 p-6 h-full flex flex-col justify-end">
-                        <span class="text-pink-400 text-xs font-hero tracking-widest uppercase mb-1">Footwear
-                            Tech</span>
+                        <span class="text-pink-400 text-xs font-hero tracking-widest uppercase mb-1">Theme 6</span>
                         <h3 class="text-xl font-bold text-white mb-2 leading-tight">Simulated Comfort & Wear Prediction
                         </h3>
                         <p class="text-gray-300 text-sm line-clamp-4">Create a simulation pipeline that takes a
@@ -496,19 +517,19 @@
         </div>
     </section>
 
-    <section id="prizes" class="py-24 bg-black relative overflow-hidden">
+    <section id="prizes" class="py-16 md:py-20 bg-black relative overflow-hidden">
         <div
             class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyber-gold opacity-5 blur-[150px]">
         </div>
 
         <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <h2 class="text-4xl md:text-6xl font-hero font-bold text-center mb-16 text-white" data-aos="fade-down">
+            <h2 class="text-2xl md:text-4xl font-hero font-bold text-center mb-6 md:mb-8 text-white" data-aos="fade-down">
                 GRAND <span class="text-gradient-gold">REWARDS</span>
             </h2>
 
             <div class="flex flex-col items-center justify-center">
 
-                <div class="w-full md:w-2/3 glass border-2 border-yellow-500/50 rounded-2xl p-10 text-center relative overflow-hidden group hover:border-yellow-400 transition-all duration-500 shadow-[0_0_50px_rgba(255,215,0,0.1)] hover:shadow-[0_0_100px_rgba(255,215,0,0.3)]"
+                <div class="w-full md:w-4/5 lg:w-3/4 glass border-2 border-yellow-500/50 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-7 text-center relative overflow-hidden group hover:border-yellow-400 transition-all duration-500 shadow-[0_0_50px_rgba(255,215,0,0.1)] hover:shadow-[0_0_100px_rgba(255,215,0,0.3)]"
                     data-aos="zoom-in">
                     <!-- Background Glow -->
                     <div
@@ -516,64 +537,66 @@
                     </div>
 
                     <!-- Trophy Icon -->
-                    <div class="relative z-10 mb-8">
+                    <div class="relative z-10 mb-3 md:mb-4">
                         <div
-                            class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-lg shadow-yellow-500/50 animate-float">
-                            <i class="fas fa-trophy text-4xl text-black drop-shadow-md"></i>
+                            class="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-lg shadow-yellow-500/50 animate-float">
+                            <i class="fas fa-trophy text-xl md:text-2xl lg:text-3xl text-black drop-shadow-md"></i>
                         </div>
                     </div>
 
                     <!-- Title -->
                     <h3
-                        class="relative z-10 text-5xl md:text-7xl font-hero font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-yellow-400 to-yellow-100 mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                        class="relative z-10 text-2xl md:text-4xl lg:text-5xl font-hero font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 via-yellow-400 to-yellow-100 mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                         TOP 3 TEAMS
                     </h3>
 
                     <!-- Subtitle -->
-                    <p class="relative z-10 text-white text-xl md:text-2xl font-bold mb-10 tracking-wide">
-                        Prestigious Internship Opportunity
+                    <p class="relative z-10 text-white text-sm md:text-lg lg:text-xl font-bold mb-4 md:mb-5 tracking-wide">
+                        Prestigious Internship Opportunity in VLabs
                     </p>
 
                     <!-- Prize Amount Box -->
                     <div
-                        class="relative z-10 inline-block bg-black/60 backdrop-blur-md border border-yellow-500/30 rounded-2xl px-8 md:px-14 py-8 mb-6 transform group-hover:scale-105 transition-transform duration-300 shadow-2xl">
-                        <div class="text-cyber-blue font-hero text-sm md:text-base tracking-[0.2em] uppercase mb-2">
+                        class="relative z-10 inline-block bg-black/60 backdrop-blur-md border border-yellow-500/30 rounded-lg md:rounded-xl px-4 md:px-8 lg:px-10 py-4 md:py-5 mb-3 md:mb-4 transform group-hover:scale-105 transition-transform duration-300 shadow-2xl">
+                        <div class="text-cyber-blue font-hero text-xs tracking-[0.2em] uppercase mb-1">
                             Stipend Per Month</div>
                         <div
-                            class="text-6xl md:text-8xl font-hero font-bold text-white mb-3 drop-shadow-[0_0_20px_rgba(255,215,0,0.4)]">
+                            class="text-3xl md:text-5xl lg:text-6xl font-hero font-bold text-white mb-2 drop-shadow-[0_0_20px_rgba(255,215,0,0.4)]">
                             ₹15,000
                         </div>
                         <div
-                            class="flex items-center justify-center gap-2 text-yellow-400 font-bold text-lg md:text-2xl tracking-wide flex-wrap">
+                            class="flex items-center justify-center gap-2 text-yellow-400 font-bold text-sm md:text-base lg:text-lg tracking-wide flex-wrap">
                             <span>at</span>
                             <span
-                                class="text-white bg-yellow-600/20 px-3 py-1 rounded border border-yellow-600/50">Vlabs
+                                class="text-white bg-yellow-600/20 px-2 py-1 rounded border border-yellow-600/50 text-xs md:text-sm">Vlabs
                                 (MoE, India)</span>
                         </div>
                     </div>
 
-                    <p class="relative z-10 text-gray-500 text-sm font-hero tracking-widest uppercase mt-4">
-                        Valid for Each Student in the Top 3 Teams
+                    <p
+                        class="relative z-10 text-white text-xs md:text-sm lg:text-base font-hero font-bold tracking-widest uppercase mt-3 md:mt-4 px-2 leading-relaxed">
+                        For <span class="text-cyber-blue border-b-2 border-cyber-blue pb-1 mb-1 inline-block">Each Student</span> in the
+                        Top 3 Teams
                     </p>
                 </div>
 
             </div>
 
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
-                    <i class="fas fa-certificate text-cyber-purple text-3xl mb-3"></i>
-                    <h4 class="text-white font-bold">Certificates</h4>
-                    <p class="text-gray-500 text-sm">For all Shortlisted Teams</p>
+            <div class="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 text-center">
+                <div class="p-3 md:p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-certificate text-cyber-purple text-xl md:text-2xl mb-2"></i>
+                    <h4 class="text-white font-bold text-sm md:text-base">Certificates</h4>
+                    <p class="text-gray-500 text-xs md:text-sm">For all Shortlisted Teams</p>
                 </div>
-                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
-                    <i class="fas fa-users text-cyber-blue text-3xl mb-3"></i>
-                    <h4 class="text-white font-bold">Elite Finalists</h4>
-                    <p class="text-gray-500 text-sm">6 Teams Shortlisted for Finale</p>
+                <div class="p-3 md:p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-users text-cyber-blue text-xl md:text-2xl mb-2"></i>
+                    <h4 class="text-white font-bold text-sm md:text-base">Elite Finalists</h4>
+                    <p class="text-gray-500 text-xs md:text-sm">6 Teams Shortlisted for Final Round</p>
                 </div>
-                <div class="p-6 bg-gray-900/50 rounded-lg border border-gray-800">
-                    <i class="fas fa-handshake text-cyber-gold text-3xl mb-3"></i>
-                    <h4 class="text-white font-bold">Networking</h4>
-                    <p class="text-gray-500 text-sm">Connect with MoE Officials</p>
+                <div class="p-3 md:p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <i class="fas fa-handshake text-cyber-gold text-xl md:text-2xl mb-2"></i>
+                    <h4 class="text-white font-bold text-sm md:text-base">Networking</h4>
+                    <p class="text-gray-500 text-xs md:text-sm">Connect with like minded people.</p>
                 </div>
             </div>
         </div>
@@ -590,19 +613,18 @@
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="col-span-1 md:col-span-2">
-                    <h2 class="text-2xl font-hero text-white mb-4">DEI <span class="text-cyber-blue">x</span> VIRTUAL
+                    <h2 class="text-2xl font-hero text-white mb-4">Dayalbagh Educational Institute <span
+                            class="text-cyber-blue">x</span> VIRTUAL
                         LABS</h2>
                     <p class="text-gray-500 text-sm max-w-sm mb-6">
                         Dayalbagh Educational Institute (Deemed to be University)<br>
                         Dayalbagh, Agra - 282005
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                        <a href="https://www.linkedin.com/school/dayalbagh-educational-institute/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i
                                 class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.dei.ac.in/dei/" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i
+                                class="fas fa-globe text-xl"></i></a>
                     </div>
                 </div>
                 <div>
@@ -611,7 +633,7 @@
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li class="hover:text-white transition-colors">
                             <span class="block text-cyber-purple font-bold">Prof. Rahul Swaroop Sharma</span>
-                            Dept. of Mechanical Engineering<br>DEI, Agra
+                            Dept. of Mechanical Engineering<br>Dayalbagh Educational Institute, Agra
                         </li>
                         <li class="mt-4">
                             <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
@@ -624,16 +646,16 @@
                     </h3>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li class="hover:text-white transition-colors">
-                            <span class="block text-cyber-blue font-bold">Netik Goswami</span>
-                            <a href="mailto:netikgoswami2400970@dei.ac.in"
-                                class="hover:text-cyber-blue transition-colors">netikgoswami2400970@dei.ac.in</a> <br>
-                            +91 8791723878
-                        </li>
-                        <li class="hover:text-white transition-colors">
                             <span class="block text-cyber-blue font-bold">Mudit Vij</span>
                             <a href="mailto:muditvij2400967@dei.ac.in"
                                 class="hover:text-cyber-blue transition-colors">muditvij2400967@dei.ac.in</a> <br> +91
                             8630044552
+                        </li>
+                        <li class="hover:text-white transition-colors">
+                            <span class="block text-cyber-blue font-bold">Netik Goswami</span>
+                            <a href="mailto:netikgoswami2400970@dei.ac.in"
+                                class="hover:text-cyber-blue transition-colors">netikgoswami2400970@dei.ac.in</a> <br>
+                            +91 8791723878
                         </li>
                         <li class="hover:text-white transition-colors">
                             <span class="block text-cyber-blue font-bold">Shreyansh Jain</span>
@@ -651,12 +673,36 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Overlay (Moved to Body for Stacking Context) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black z-[60] transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center overflow-y-auto">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white focus:outline-none p-2">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+
+        <nav class="flex flex-col gap-8 text-center px-4 w-full max-w-sm">
+            <a href="#about"
+                class="mobile-link text-2xl font-hero tracking-widest text-white hover:text-cyber-blue transition-colors py-2 border-b border-gray-800">ABOUT</a>
+            <a href="#rules"
+                class="mobile-link text-2xl font-hero tracking-widest text-white hover:text-cyber-blue transition-colors py-2 border-b border-gray-800">RULES</a>
+            <a href="#roadmap"
+                class="mobile-link text-2xl font-hero tracking-widest text-white hover:text-cyber-blue transition-colors py-2 border-b border-gray-800">TIMELINE</a>
+            <a href="#problems"
+                class="mobile-link text-2xl font-hero tracking-widest text-white hover:text-cyber-blue transition-colors py-2 border-b border-gray-800">CHALLENGES</a>
+            <a href="#prizes"
+                class="mobile-link text-2xl font-hero tracking-widest text-white hover:text-cyber-gold transition-colors py-2 border-b border-gray-800">PRIZES</a>
+            <a href="https://forms.gle/MyVHQxzNisUqimtb8" target="_blank"
+                class="mobile-link inline-block width-full px-8 py-4 bg-cyber-blue text-black font-hero font-bold rounded text-xl hover:bg-white hover:shadow-[0_0_20px_#00f3ff] transition-all duration-300 mt-4 mx-auto">
+                REGISTER NOW
+            </a>
+        </nav>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 50 });
     </script>
     <script src="js/script.js"></script>
 </body>
-
 
 </html>
